@@ -4,9 +4,6 @@ Hamiltonian. The code is written in Fortran. There are a number of empty
 subroutines in this repo which need to be filled in. Some of the exercises will 
 require new subroutines to be written.
 
-**question**: should we include your theoretical background pdf in this repo 
-@liam to point the students to in the README?
-
 ## Table of Contents
 - [Installation](#installation)
 - [Exercises](#exercises)

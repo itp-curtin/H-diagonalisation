@@ -17,7 +17,7 @@ program main
 
     call parse_input_file('data.in', rgrid, basis)
 
-    call setup_rgrid(rgrid%npoints, rgrid%grid, rgrid%weights, rgrid%dr_min, rgrid%rmax, output_unit)
+    call setup_rgrid(rgrid%npoints, rgrid%grid, rgrid%weights, rgrid%dr_min, rgrid%rmax)
 
     call setup_basis(basis, rgrid)
 

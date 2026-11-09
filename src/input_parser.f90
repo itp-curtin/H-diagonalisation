@@ -1,5 +1,4 @@
 module input_parser
-    use precision_mod, only: wp
     use fparse, only: schema_type, &
                       input_tree_type, &
                       init_schema, &
@@ -12,16 +11,7 @@ module input_parser
 
     private
 
-    public :: input_data_type, parse_input_file
-
-    type :: input_data_type
-        integer :: nmax = 0
-        integer :: l = 0
-        integer :: npoints = 0
-        real(wp) :: zeta = 0.0_wp
-        real(wp) :: rmin = 0.0_wp
-        real(wp) :: rmax = 0.0_wp
-    end type input_data_type
+    public :: parse_input_file
 
 contains
 
@@ -38,11 +28,10 @@ contains
         type(basis_type), intent(out) :: basis
         character(len=*), intent(in) :: filename
         integer, intent(in), optional :: ounit
-
+        !
         type(schema_type) :: schema
         type(input_tree_type) :: tree
         integer :: log_unit
-        real(kind=8) :: value_real
 
         if (present(ounit)) then
             log_unit = ounit
@@ -99,6 +88,7 @@ contains
         call add_key(schema, 'rgrid', 'rmin', .true., .false., '')
         call add_key(schema, 'rgrid', 'rmax', .true., .false., '')
         call add_key(schema, 'rgrid', 'npoints', .true., .false., '')
+
     end subroutine build_schema
 
 end module input_parser

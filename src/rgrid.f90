@@ -20,10 +20,9 @@ contains
     !
     ! purpose: defines the electron radial grid points and integration weights
     !--------------------------------------------------------------------------
-    subroutine setup_rgrid(npoints,rgrid,wrgrid,dr_min,rmax,ounit)
+    subroutine setup_rgrid(npoints,rgrid,wrgrid,dr_min,rmax)
         implicit none
         integer, intent(in) :: npoints
-        integer, intent(in) :: ounit
         real(kind=wp), intent(out) :: rgrid(1:npoints),wrgrid(1:npoints)
         real(kind=wp), intent(in) :: dr_min,rmax
         integer :: i
@@ -35,7 +34,7 @@ contains
             rgrid(i)=dr_min*(rmax/dr_min)**(real(i,kind=wp)/real(npoints,kind=wp))
         enddo
 
-        call trapezodial_weights(rgrid(1:npoints),npoints,wrgrid(1:npoints))   
+        call trapezoidal_weights(rgrid(1:npoints),npoints,wrgrid(1:npoints))
 
     end subroutine setup_rgrid 
 
@@ -58,6 +57,6 @@ contains
         enddo
         w(n)=0.5_wp*(x(n)-x(n-1))
 
-    end subroutine trapezodial_weights
+    end subroutine trapezoidal_weights
 
 end module rgrid_mod
