@@ -4,7 +4,7 @@ module basis
 
     private
 
-    public :: basis_type
+    public :: basis_type, allocate_basis
 
     type :: basis_type
         integer :: nmax ! index of highest n in the basis
