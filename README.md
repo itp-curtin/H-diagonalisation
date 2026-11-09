@@ -37,7 +37,7 @@ git clone <fill-in-when-apart-of-itp-org>
 4. Starting with l=0 orbital angular momentum and scale parameter 
    $\zeta = 1$, run the program with basis sizes of 5, 10, 20, 30, and 50. In
    each case how many solutions agree with the exact energy eigenvalues of
-   atomic hydrogen.
+   atomic hydrogen?
 
 5. Test the program for states with different $l$ to ensure that the
    implementation is correct for not just $s$-states.
