@@ -14,7 +14,7 @@ require new subroutines to be written.
 To install this code please enter the following command
 
 ```bash
-git clone <fill-in-when-apart-of-itp-org>
+git clone git@github.com:itp-curtin/H-diagonalisation.git
 ```
 
 ## Exercises
